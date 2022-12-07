@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: chat
+  username: chat
+  password: chat
+  encoding: unicode
+  pool: 5

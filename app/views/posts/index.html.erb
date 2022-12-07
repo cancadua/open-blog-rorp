@@ -1,0 +1,9 @@
+<div class='chat-container'>
+
+  <% @posts.each do |post| %>
+    <%= render post %>
+  <% end %>
+
+  <%= link_to "New post", new_post_path, class:'new-post' %>
+
+</div>

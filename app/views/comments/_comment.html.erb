@@ -1,0 +1,18 @@
+<% if comment.persisted? %>
+<div id="<%= dom_id comment %>" class="comment-container">
+
+  <div class="comment-title">
+        <%=  comment.title %>
+  </div>
+
+  <%= link_to 'Delete', [comment.post, comment], class: 'comment-delete', data: { "turbo-method": :delete } %>
+
+  <div class="comment-time">
+    Updated at <%=  truncate(strip_tags(comment.updated_at.to_s), length: 22)  %>
+  </div>
+  <div class="comment-content">
+    <%=  comment.content %>
+  </div>
+
+</div>
+<%  end %>

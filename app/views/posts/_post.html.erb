@@ -1,0 +1,29 @@
+<div id="<%= dom_id post %>" class='post-container'>
+  <div class='title'>
+    <%= post.title %>
+  </div>
+  <div class='time'>
+    Updated at <%= truncate(strip_tags(post.updated_at.to_s), length: 22) %>
+  </div>
+  <div class='content'>
+    <%= post.content %>
+  </div>
+  <div class='manage-post'>
+    <%= link_to "Edit this post", edit_post_path(post), class: 'edit-post' %>
+    <%= link_to 'Delete', post, class: 'delete-post', data: { "turbo-method": :delete } %>
+  </div>
+
+
+  <div class="comments">
+    <%= render post.comments %>
+
+    <%= form_with(model: [post, post.comments.build], class:'comment-form-container') do |f| %>
+      <h3>
+        Add your comment!
+      </h3>
+      <%= f.text_field :title, placeholder: "Title", class: "comment-input"%>
+      <%= f.text_field :content, placeholder: "Content", class:"comment-input" %>
+      <%= f.submit :class => "send-comment" %>
+    <% end %>
+  </div>
+</div>
