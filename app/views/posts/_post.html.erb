@@ -3,7 +3,7 @@
     <%= post.title %>
   </div>
   <div class='time'>
-    Updated at <%= truncate(strip_tags(post.updated_at.to_s), length: 22) %>
+    Updated at <%= post.updated_at.strftime("%Y-%m-%d %H:%M:%S") %>
   </div>
   <div class='content'>
     <%= post.content %>
@@ -13,10 +13,8 @@
     <%= link_to 'Delete', post, class: 'delete-post', data: { "turbo-method": :delete } %>
   </div>
 
-
   <div class="comments">
     <%= render post.comments %>
-
     <%= form_with(model: [post, post.comments.build], class:'comment-form-container') do |f| %>
       <h3>
         Add your comment!

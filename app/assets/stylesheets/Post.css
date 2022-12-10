@@ -28,6 +28,9 @@
 }
 
 .post-container .time {
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding: 1rem;
     grid-column: 4;
     grid-row: 1;
