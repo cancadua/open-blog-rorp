@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  resources :posts do
-    resources :comments
+  resources :posts, :except => [:show] do
+    resources :comments, :except => [:edit, :show, :update]
   end
   get 'home/index'
-  get 'chat', to: 'chat#index'
   root 'home#index'
 end
