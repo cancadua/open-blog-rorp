@@ -1,4 +1,4 @@
-development:
+developement:
   adapter: postgresql
   database: chat
   username: chat

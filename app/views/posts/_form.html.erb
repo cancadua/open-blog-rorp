@@ -1,6 +1,7 @@
 <%= form_with(model: post, class:"form-post-container") do |form| %>
     <div class='post-form'>
       <%= form.text_field :title, class: 'title', placeholder: "Title" %>
+      <%= form.text_field :tag_list, placeholder: "Tagsss", value: @post.send(:tag_list).to_s %>
       <%= form.text_field :content, class: 'content-textarea', placeholder: "Content" %>
       <div class='manage-post'>
           <%= form.submit class:'send-post' %>

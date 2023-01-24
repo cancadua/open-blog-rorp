@@ -1,26 +1,41 @@
 .post-container {
     color: white;
-    background: #252437;
-    overflow: hidden;
+    background-image: radial-gradient( circle farthest-corner at 16.5% 28.1%,  rgba(15,27,49,1) 0%, rgba(0,112,218,1) 90% );
     border-radius: 2rem;
     width: 80%;
     display: grid;
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     border: black 2px solid;
 }
 
 .post-container .title {
+    word-break: break-word;
     font-weight: bold;
     padding: 1rem;
     grid-column: 1;
     grid-row: 1;
 }
 
+.post-container .tags {
+    padding: 1rem;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.tag {
+    text-decoration: none;
+    color: #4294d3;
+}
+
+.tag:hover {
+    color: #86b6f5;
+}
+
 .post-container .content {
     color: white;
     padding: 2rem;
-    word-break: break-all;
-    white-space: initial;
+    word-break: break-word;
+    white-space: pre-line;
     min-height: 3rem;
     grid-column: 1 / 5;
     grid-row: 2;
@@ -28,20 +43,16 @@
 }
 
 .post-container .time {
-    width: 80%;
-    overflow: hidden;
-    text-overflow: ellipsis;
     padding: 1rem;
     grid-column: 4;
     grid-row: 1;
 }
 
 .post-container .comments {
-    padding: 1rem;
     gap: 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column-reverse;
-    justify-content: center;
     align-items: center;
     grid-column: 1 / 5;
     grid-row: 5;
@@ -53,8 +64,6 @@
     aspect-ratio: 2 / 1;
     grid-row: 1 / 5;
     grid-column: 5;
-    border: none;
-    overflow: hidden;
 }
 
 .post-container .manage-post .edit-post {
@@ -65,11 +74,15 @@
     font-weight: bold;
     color: white;
     border: solid 2px #114505;
-    background: #006505;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,160,71,1) 0%, rgba(0,104,105,1) 50% );
     width: 50%;
     cursor: pointer;
     aspect-ratio: 1 / 1;
     border-radius: 0 0 0 2rem;
+}
+
+.post-container .manage-post .edit-post:hover {
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
 }
 
 .post-container .manage-post .delete-post {
@@ -80,7 +93,11 @@
     color: white;
     cursor: pointer;
     border: solid 2px #900000;
-    background: #a00000;
-    width: 50%;
+    background-image: linear-gradient( 109.1deg,  rgba(265,57,75,1) 7.1%, rgba(211,13,0,1) 46.4% );
+    border-radius: 0 2rem 0 0;
     aspect-ratio: 1 / 1;
+}
+
+.post-container .manage-post .delete-post:hover {
+    background-image: linear-gradient( 109.1deg,  rgba(281,73,91,1) 7.1%, rgba(225,27,14,1) 86.4% );
 }

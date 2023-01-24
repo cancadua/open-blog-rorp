@@ -2,8 +2,15 @@
   <div class='title'>
     <%= post.title %>
   </div>
+
+  <div>
+    <% post.tag_list.each do |tag| %>
+      <%= link_to tag, tagged_path(tag: tag) %>
+    <% end %>
+  </div>
+
   <div class='time'>
-    Updated at <%= post.updated_on.strftime("%Y-%m-%d %H:%M:%S") %>
+    <%= post.updated_on.strftime("%Y-%m-%d %H:%M:%S") %>
   </div>
   <div class='content'>
     <%= post.content %>

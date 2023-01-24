@@ -5,6 +5,8 @@ ruby "3.1.2"
 
 gem "rails", "~> 7.0.4"
 
+gem 'acts-as-taggable-on', '~> 9.0'
+
 gem "sprockets-rails"
 
 gem "pg", "~> 1.1"

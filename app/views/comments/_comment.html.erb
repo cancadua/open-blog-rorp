@@ -8,7 +8,7 @@
   <%= link_to 'Delete', [comment.post, comment], class: 'comment-delete', data: { "turbo-method": :delete } %>
 
   <div class="comment-time">
-    Updated at <%= comment.updated_on.strftime("%Y-%m-%d %H:%M:%S") %>
+    <%= comment.updated_on.strftime("%Y-%m-%d %H:%M:%S") %>
   </div>
   <div class="comment-content">
     <%= comment.content %>
