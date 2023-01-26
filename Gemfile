@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
+ruby "3.2.0"
 
-gem "rails", "~> 7.0.4"
+gem "rails", "~> 7.0.4.2"
 
 gem 'acts-as-taggable-on', '~> 9.0'
 

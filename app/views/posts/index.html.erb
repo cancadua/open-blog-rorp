@@ -1,5 +1,9 @@
 <div class='home-post-container'>
-
+  <div class="tags">
+    <% @all_tags.each do |tag| %>
+      <%= link_to "#"+ tag.name, tag_path(tag: tag.name), class: "tag" %>
+    <% end %>
+  </div>
   <% @posts.each do |post| %>
     <%= render post %>
   <% end %>

@@ -1,16 +1,18 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_tags
 
-  def tagged
-    if params[:tag].present?
-      @posts = Post.tagged_with(params[:tag])
-    else
-      @posts = Post.all
-    end
-  end
+ActsAsTaggableOn.default_parser = TagParser
+ActsAsTaggableOn.remove_unused_tags = true
 
   def index
-    @posts = Post.all
+    if params[:search]
+      @posts = Post.all.where("title LIKE :search OR content LIKE :search", search: "%#{params[:search].downcase}%").order(updated_on: :desc)
+    elsif params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order(updated_on: :desc)
+    else
+      @posts = Post.all.order(updated_on: :desc)
+    end
   end
 
   # GET /posts/new
@@ -46,6 +48,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_path}
     end
+  end
+
+  def set_tags
+    @all_tags = ActsAsTaggableOn::Tag.all.uniq
+  end
+
+  def search
+
   end
 
   private

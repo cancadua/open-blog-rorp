@@ -1,8 +1,11 @@
 <div class="navbar">
   <%= link_to 'Home', posts_path, class:'button' %>
   <%= link_to 'Add post', new_post_path, class:'button' %>
-  <form class="search">
-    <input type="search" placeholder="Search..." name="search"/>
-    <button type="submit">Search</button>
-  </form>
+
+  <%= form_tag(posts_path, :method => :get, class: "search") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search..." %>
+    <button type="submit" value="Search" class="submit" data-disable-with="Search">Search</button>
+  <% end %>
+
+  
 </div>

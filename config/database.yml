@@ -1,15 +1,15 @@
-developement:
+development:
   adapter: postgresql
   database: chat
-  username: chat
-  password: chat
+  username: postgres
+  password: postgres
   encoding: unicode
   pool: 5
 
 production:
   adapter: postgresql
   database: chat
-  username: chat
-  password: chat
+  username: postgres
+  password: postgres
   encoding: unicode
   pool: 5

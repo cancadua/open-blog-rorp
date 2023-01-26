@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   # GET /comments or /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.all.order(:updated_on)
   end
 
   # GET /comments/new

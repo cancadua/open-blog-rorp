@@ -3,9 +3,9 @@
     <%= post.title %>
   </div>
 
-  <div>
+  <div class= 'tags'>
     <% post.tag_list.each do |tag| %>
-      <%= link_to tag, tagged_path(tag: tag) %>
+      <%= link_to "#" + tag, tag_path(tag: tag), class: "tag" %>
     <% end %>
   </div>
 
@@ -23,9 +23,9 @@
   <div class="comments">
     <%= render post.comments %>
     <%= form_with(model: [post, post.comments.build], class:'comment-form-container') do |f| %>
-      <h3>
+      <div class="text">
         Add your comment!
-      </h3>
+      </div>
       <%= f.text_field :title, placeholder: "Title", class: "comment-input"%>
       <%= f.text_field :content, placeholder: "Content", class:"comment-input" %>
       <%= f.submit :class => "send-comment" %>
