@@ -18,6 +18,7 @@ config/secret.yml:
 ``` # [...]
 production:
 	secret_key_base: <skopiowany ciąg znaków>
-# [...] ```
+# [...] 
+```
 
-Aplikację można uruchomić komendą rails s -e production, dostępna będzie pod adresem localhost/3000
+Aplikację można uruchomić komendą ```rails s -e production```, dostępna będzie pod adresem ```localhost/3000```.
